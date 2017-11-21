@@ -1,0 +1,45 @@
+/*=================================
+=            Variables            =
+=================================*/
+
+/*----------
+Variables de color
+----------*/
+$color-principal: hsla(202, 71%, 52%,1);
+$color-secundario: hsla(201, 33%, 27%,1);
+$color-terciario: hsla(202, 66%, 40%,1);
+$color-base-oscuro: hsla(0, 0%, 20%,1);
+$color-base-claro: hsla(0, 0%, 94%,1);
+
+
+$color-error: hsla(356, 80%, 43%, 1.0);
+$color-warning: hsla(36, 95%, 52%, 1.0);
+$color-positive: hsla(129, 91%, 36%, 1.0);
+/*----------
+Variables enlaces de color
+----------*/
+$enlace: hsla(202, 71%, 52%,1);
+$enlace-visited: hsla(202, 71%, 52%,1);
+$enlace-hover: hsla(201, 33%, 27%,1);
+$enlace-active: hsla(202, 66%, 40%,1);
+
+/*----------
+Media queries para el mixin
+
+Cada variable responde a un breakpoint. Si hacemos include de S su ambito es desde
+los 30 em hasta los 43 em. Si queremos ampliar el ambito con Splus le quitamos el limite.
+los splus,mplus,lplus... equivalen a min-width(desde la variable hasta el más alla).
+con sneg, mneg,lneg... el breakpoint equivale a max-width (hasta la variable).
+Para hacer saltos entre variables definimos en el mixin se stoL, de mtoxl de este modo nos saltamos
+el breakpoint que haga falta
+----------*/
+
+$XS: 20em; //320 pixeles green
+$S: 30em;//480px red
+$M: 42.5em;//680px orange
+$L: 56.3125em;//901px yellow
+$XL: 64.0625em;//1025 purple
+$XXL: 87.5em; //1400px grey
+$XXXL: 121.87em; //1950px pink
+
+

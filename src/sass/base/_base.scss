@@ -1,0 +1,71 @@
+/*====================================================
+=            Estilos tag para toda la web            =
+====================================================*/
+/*----------
+No class, no ID.
+----------*/
+
+html {
+    box-sizing: border-box;
+  }
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+::selection {
+	background-color: skyblue;
+	color: white;
+}
+
+body {
+    line-height: 1.5;
+}
+
+/*----------
+Enlaces default
+----------*/
+a[href]:not([class]) {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:link,
+    &:visited {
+        color: $enlace;
+    }
+
+    &:hover {
+        color: $enlace-hover;
+    }
+    /*stylelint-disable */
+    &:active {}
+    /*stylelint-enable */
+}
+
+/*----------
+Css para imagenes caidas
+----------*/
+img {
+    display: block;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    height: auto;
+    line-height: 2;
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+}
+
+img::before {
+    content: "Lo lamento la imagen está desaparecida :(";
+    display: block;
+    margin-bottom: 10px;
+}
+
+img::after {
+    content: "(url: " attr(src) ")";
+    display: block;
+    font-size: 12px;
+}

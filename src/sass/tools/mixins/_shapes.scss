@@ -1,0 +1,48 @@
+/*==============================
+=            Formas            =
+==============================*/
+/*----------
+Círculo
+----------*/
+
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    padding-bottom: $size;
+}
+
+
+/*----------
+Cuadrado
+----------*/
+
+@mixin square($size) {
+    height: 0;
+    width: $size;
+    padding-bottom: $size;
+}
+
+
+/*----------
+Rectángulo
+----------*/
+
+@mixin rectangle($size) {
+    height: 0;
+    padding-bottom: $size / 3 *2;
+    width: $size;
+}
+
+/*----------
+Rombo
+----------*/
+
+@mixin rombo($size) {
+	@include square($size);
+	transform: rotate(-45deg);
+}
+
+
+
+

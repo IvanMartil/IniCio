@@ -1,0 +1,45 @@
+{
+  "name": "IniCio",
+  "version": "1.0.0",
+  "description": "Plantilla para iniciar proyectos",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp-production": "env NODE_ENV=production gulp",
+    "gulp-development": "gulp",
+    "watch": "gulp work"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "ivan martil",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.12",
+    "cssnano": "^3.10.0",
+    "del": "^3.0.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-processhtml": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-stylelint": "^5.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "jshint": "^2.9.5",
+    "stylelint-scss": "^2.1.0"
+  },
+  "dependencies": {
+    "uuid": "^3.1.0"
+  }
+}

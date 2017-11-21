@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="es">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- build:remove -->
+    Con http-equiv forzamos a internet explorer a que renderice la pagina en modo edge o en chrome en caso de que este el complemento instalado. Valorar si dejar o suprimir
+    <!-- /build -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- build:remove -->
+    Seo, rellenar content con el info contenido de la página. Frases cortas
+    <!-- /build -->
+    <meta name="description" content="">
+    <!-- build:remove -->
+    No es un estandar web lo introdujo safari https://developer.mozilla.org/es/docs/M%C3%B3vil/Viewport_meta_tag La propiedad width controla el tamaño del viewport puede ser específica width="600" o con device-width que equivale al ancho de la pantalla en px. Initial-scale controla el nivel de zoom cuando la pagina se carga por primera vez maximum-sacale,minimum-scale, user-scalable controlan el máximo escalable, el mínimo y si el usuario puede o no hacer zomm (user-scalable=no)
+    <!-- /build -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IniCio</title>
+    
+    <!-- build:css:dist css/style.min.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- /build -->
+   
+    <link rel="author" href="humans.txt">
+    <!-- build:remove 	En caso de no usar modernizr con este script detecto si esta o no js activado, descomentar si es necesario-->
+    <script>
+    document.documentElement.classList.remove('no-js');
+    console.log('javascript activo')
+    </script>
+    <!-- /build -->
+
+
+</head>
+
+<body class="layout body">
+    <!--[if lt IE 9]>
+		<p class="browserupgrade">Estas utilizando un navegador <strong>obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a>.Un navegador actualizado mejora tu seguridad y la experiencia en la web.</p>
+		<![endif]-->   
+    <main class="main">
+
+				<!-- build:remove:dist -->
+        <h1>Contenido principal en desarrollo</h1>
+        <!-- /build -->
+
+        	<!-- build:remove:dev -->
+        <h1>Contenido principal en producción</h1>
+        <!-- /build -->
+
+        <!-- build:remove -->
+        <h1>ESTE ARCHIVO HTML NO ESTA PROCESADO</h1>
+        <!-- /build -->
+         
+    </main>
+     <!-- build:include include/footer.html -->
+     <!-- /build -->
+
+
+    <!-- build:js:dist js/script.min.js -->
+    <!-- <script src="js/component.menu.js"></script> -->
+    <script src="js/myscript.js"></script>
+    <!-- /build -->
+</body>
+
+</html>

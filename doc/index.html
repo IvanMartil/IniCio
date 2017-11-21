@@ -1,0 +1,290 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="es"><!--<![endif]--><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><title>Documentación web</title><link rel="stylesheet" href="css/style.min.css"><!-- /*<link rel="stylesheet" href="css/vendor/prism.css"> */--><link rel="author" href="humans.txt"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"></head><body class="layout" id="body"><!--[if lt IE 9]>
+	<p class="browserupgrade">Estas utilizando un navegador <strong>obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a>.Un navegador actualizado mejora tu seguridad y la experiencia en la web.</p>
+	<![endif]--><nav class="nav" id="nav"><div class="nav__button"><a id="menu-button" class="menu__button noZensmooth" href="#"><span></span></a></div><h1 class="nav__logo">DocIniCio</h1><ul class="main-menu"><li class="main-menu__li"><a href="#" data-scroll>Organización</a></li><li class="main-menu__li"><a href="#gulp" data-scroll>Gulp</a><ul class="main-menu__ul-sub"><li><a href="#gulp_instala" data-scroll>Instalación</a></li><li><a href="#gulp_usar" data-scroll>Usando Gulp</a></li><li><a href="#gulp_comando" data-scroll>Comandos npm</a></li></ul></li><li class="main-menu__li"><a href="#css" data-scroll>Css</a><ul class="main-menu__ul-sub"><li><a href="#css_estructura" data-scroll>Estructura</a></li><li><a href="#css_syntaxy" data-scroll>Syntaxy y Formato</a></li><li><a href="#css_nomenclatura" data-scroll>Nomenclatura</a></li><li><a href="#css_comentarios" data-scroll>Comentarios</a></li><li><a href="#css_preprocesadores" data-scroll>Preprocesadores</a></li></ul></li><li class="main-menu__li"><a href="#html" data-scroll>Html</a></li></ul></nav><main class="main"><article class="article article--order" id="orden"><header><h2 class="h2">Organización</h2><p>Donde está cada archivo y cual es su función.</p></header><section><h3 class="h3">Estructura carpetas y archivos</h3><ul class="js-acordeon"><li><strong>doc</strong></li><li><strong class="js-nivel2">gulp</strong><ul class="acordeon-nivel2"><li><strong class="js-nivel3">task</strong><ul class="acordeon-nivel3"><li>clean.js</li><li>images.js</li><li>index.js</li><li>html.js</li><li>scripts.js</li><li>styles.js</li><li>watch.js</li></ul></li><li>config.js</li></ul></li><li><strong class="js-nivel2">src</strong><ul class="acordeon-nivel2"><li><strong>img</strong></li><li><strong>include</strong></li><li><strong class="js-nivel3">js</strong><ul class="acordeon-nivel3"><li>vendor</li></ul></li><li><strong class="js-nivel3">sass</strong><ul class="acordeon-nivel3"><li><strong class="js-nivel4">base</strong><ul class="acordeon-nivel4"><li>base.normalize.scss</li><li>base.scss</li></ul></li><li><strong class="js-nivel4">tools</strong><ul class="acordeon-nivel4"><li><strong>mixins</strong></li><li><strong>functions</strong></li><li><strong>animate</strong></li><li>_tools.animate.scss</li><li>_tools.functions.scss</li><li>_tools.helpers.scss</li><li>_tools.mediatool.scss</li><li>_tools.mixins.scss</li></ul></li><li><strong>layout</strong></li><li><strong>components</strong></li><li>_style-var.scss</li><li>style.scss</li></ul></li><li>index.html</li></ul></li><li>.babelrc</li><li>.gitignore</li><li>.jshintrc</li><li>.stylelintrc</li><li>gulpfile.babel.js</li><li>human.txt</li><li>package.json</li><li>README.md</li><li>robots.txt</li></ul><dl><dt>doc</dt><dd>La carpeta <strong>Doc</strong> incluye toda la documentación necesaria para trabajar con la plantilla. Se adapta a cada proyecto.</dd><dt>gulp</dt><dd>Es la carpeta donde están las tareas de gulp y sus archivos de configuración. Para ver más en profundidad cada archivo ver la sección <a href="#gulp" data-scroll>gulp</a>.</dd><dt>src</dt><dd>La carpeta src contiene todo el código con el que trabajamos. En su interior tenemos:<ul><li>img<ul><li>Contiene las imágenes del proyecto. Las cuales procesaramos antes de pasarlas a la carpeta final.</li></ul></li><li>includes<ul><li>Dentro van todos aquellos archivos html que luego incluimos dentro de un archivo general como index.html. Un nav, slider, sidebar, article... La idea es separar el html en archivos independientes que lo hacen más reutilizable.</li></ul></li><li>js<ul><li>Carpeta que contiene los archivos javascript. Dentro de la misma podemos crear una subcarpeta de nombre <strong>vendor</strong> donde ubicar los los archivos de terceros (jquery por ejemplo).</li></ul></li><li>sass<ul><li>Todo lo relacionado con los estilos. Para ver más en detalle cada subcarpeta ir al asección <a href="#css" data-scroll>css</a>.</li></ul></li></ul></dd><dt>.babelrc</dt><dd>Archivo necesario para trabajar con <a href="https://babeljs.io/">babel</a>. Contiene un json con información sobre los presets que vamos a utilizar. Los presets són un conjunto de plugins.</dd><dt>.gitignore</dt><dd>Archivo responsable de comunicar a git que archivos o carpetas no debe incluir. En este caso le decimos que ignore la carpetas <strong>dist</strong> y <strong>node_modules</strong>. La primera es la carpeta que contiene los archivos ya procesados y la segunda contiene todos los paquetes descargados por npm. Ambás las generamos usando gulp y no necesitamos git en ellas.</dd><dt>.jshintrc</dt><dd>Archivo donde especificar las opciones para el linter jshint.</dd><dt>.stylelintrc</dt><dd>Archivo donde especificar las opciones para el linter stylelint.</dd><dt>gulpfile.babel.js</dt><dd>Gracias a babel podemos usar gulp con ecmascript6. Es el archivo propio de gulp (gulpfile) modificado para usar con babel.</dd><dt>humans.txt</dt><dd>Propuesta interesante que nace para dar importancia a las <a href="http://humanstxt.org/ES">personas</a> que trabajan en cada proyecto. No es obligatorio, pero es una manera de informar de la autoría. Sobretodo en aquellas situaciones donde trabajamos con intermediarios.</dd><dt>package.json</dt><dd>El archivo generado con gulp. Contiene información sobre las dependencias del proyecto. Así como el nombre, descripción e incluso su repositorio git.</dd><dt>README.md</dt><dd>Escrito en markdown es una información general de como instalar y usar la plantilla para mostrar en sitios como github.</dd><dt>robots.txt</dt><dd>Archivo opcional en cualquier proyecto. Se utiliza para controlar el rastreo de la web por parte de los motores de busqueda. Podemos encontrar mucha información al respecto en las herramientas de <a href="https://support.google.com/webmasters/answer/6062608?hl=es">google</a></dd></dl></section></article><article class="article article--gulp" id="gulp"><header><h2 class="h2">Gulp</h2><p>Como instalar y usar gulp con la plantilla IniCio</p></header><section><h3 class="h3" id="gulp_instala">Instalación</h3><p>La plantilla trabaja con la versión 4 de gulp. Antes de instalar gulp4 hay que desisntalar cualquier versión previa ( Doy por hecho que <a href="https://nodejs.org/es/" target="_blank">node.js</a> y npm están instalados ).</p><pre>
+<code class="language-bash">
+npm uninstall gulp -g
+</code>
+    </pre><p>Con gulp 4 necesitamos instalar CLI que ahora esta separado del propio gulp.</p><pre>
+<code class="language-bash">
+npm install gulp-cli -g
+</code>
+    </pre><p>Ahora gulp esta instalado globalmente. Descargamos la plantilla y ejecutamos:</p><pre>
+<code class="language-bash">
+npm install
+</code>
+    </pre><p>El comando instalará todas las dependencias especificadas en package.json. Si todo es correcto ejecutando <code class="language-bash">gulp -v</code> veremos algo como esto:</p><pre>
+<code class="language-bash">
+CLI version 1.4.0
+Local version 4.0.0-alpha.2 //solo en el caso de estar en el proyecto
+</code>
+    </pre></section><section id="gulp_usar"><h3 class="h3">Usando Gulp</h3><p>Dentro de la carpeta <em>gulp</em> tenemos las tareas y el archivo de configuración <strong>config.js</strong>. En su interior tenemos las variables:</p><dl><dt>path</dt><dd>contiene las rutas a los archivos</dd><dt>environment</dt><dd>Coje su valor del entorno pasado por terminal o en su ausencia development</dd><dt>lintcss</dt><dd>Activa o desactiva el linter en la tarea css</dd><dt>server</dt><dd>La url del servidor local</dd><dt>targets</dt><dd>Entornos para los el módulo <a href="https://github.com/Wildhoney/gulp-processhtml" target="_blank">processhtml</a></dd><dt>options</dt><dd>opciones de configuración para los módulos instalados. Autoprefixer, imagemin, cssnano, processhtml (en modo desarrollo y en modo producción)</dd></dl><p>Las tareas están separadas por archivos <em>gulp/tasks</em>. Podemos llamarlas de forma individual:</p><pre>
+<code class="language-bash">
+gulp nombre_tarea
+</code>
+    </pre><p>O utilizar npm para ejecutar cualquiera de las tres tareas principales.</p><pre>
+<code class="language-bash">
+npm run gulp-development
+</code>
+    </pre><p>Ejecuta las tareas en modo desarrollo:</p><dl><dt><strong>html</strong></dt><dd>Realiza includes de los targets :dev (development).</dd><dt><strong>css</strong></dt><dd>Crear sourcemaps para facilitar el desarrollo, procesa sass en modo "expanded" para facilitar la lectura del código css, añade prefijos y notofica de los errores en el archivo. Revisa el css en busca de errores si lintcss esta activo</dd><dt><strong>js</strong></dt><dd>Revisa el código javascript en busca de errores.</dd><dt><strong>jsMove</strong></dt><dd>Desplaza el contenido de la carpeta vendor a dist.</dd><dt><strong>img</strong></dt><dd>traslada las imagenes pero no las comprime.</dd><dt><strong>work</strong></dt><dd>Abre la url del servidor y observa cambios en html,css,js y imagenes para ejecutar las tareas correspondientes.</dd></dl><pre>
+<code class="language-bash">
+npm run gulp-production
+</code>
+    </pre><p>Ejecuta las tareas en modo producción:</p><dl><dt><strong>cleanAll</strong></dt><dd>Elimina todos los archivos de la carpeta /dist</dd><dt><strong>html</strong></dt><dd>Realiza includes de los targets :dist (production) y elimina los espacios en blanco del html.</dd><dt><strong>css</strong></dt><dd>Processa sass, añade prefijos css, limpia código, comprime css y renombra el archivo resultante con el sufijo .min</dd><dt><strong>js</strong></dt><dd>Revisa el código, concatena los archivos javscript, renombra el archivo resultante como script.min.js, lo comprime y notifica la finalización.</dd><dt><strong>jsMove</strong></dt><dd>Desplaza el contenido de la carpeta vendor a dist.</dd><dt><strong>img</strong></dt><dd>Comprime las imágenes y las traslada a la carpeta dist.</dd></dl><pre>
+<code class="language-bash">
+npm run watch
+</code>
+    </pre><p>Ejecuta la tarea <em>work</em> para observar si tenemos cambios en el código.</p></section><section id="gulp_comando"><h3 class="h3">Comandos npm</h3><p>No es una guía sobre npm, pero dejo algunos comandos útiles para trabajar con la plantilla.</p><p>Comprueba si existen versiones más actuales de los modulos instalados:</p><pre>
+<code class="language-bash">
+npm outdate
+</code>
+    </pre><p>Actualiza a los módulos a sus versiones más recientes:</p><pre>
+<code class="language-bash">
+npm update
+</code>
+    </pre><p>Actualiza el modulo nombrado:</p><pre>
+<code class="language-bash">
+npm update nombre_modulo
+</code>
+    </pre><p>Deinstala el modulo nombrado:</p><pre>
+<code class="language-bash">
+npm uninstall nombre_modulo
+</code>
+    </pre><p>Una alternativa para tener los módulos actualizados es instalar globalmente el módulo <strong>npm-check-updates</strong>.</p><pre>
+<code class="language-bash">
+npm install -g npm-check-updates
+</code>
+    </pre><p>Una vez instalado ejecutando <strong>ncu</strong> se actualizan todas las dependencias de nuestro proyecto y nos informa de los cambios en el terminal.</p><pre>
+<code class="language-bash">
+ncu
+</code>
+    </pre><p>Para actualizar las dependencias y anotar los cambios en el package.json.</p><pre>
+<code class="bash language-bash">
+ncu -u
+</code>
+    </pre><p>Existen más <a href="https://www.npmjs.com/package/npm-check-updates">opciones</a> para utilizar el módulo.</p><div>NOTA: Por algún motivo que no entiendo el comando <em>ncu</em> en windows funciona bien en <em>powerShell</em> pero no con <em>gitbash</em>. En este último el comando adecuado es <code class="language-bash">ncu -u --packageFile package.json</code></div></section></article><article class="article article--style" id="css"><header><h2 class="h2">Css</h2><p>Basada sobretodo en ITCSS para facilitar la especificidad propia del css a la hora de cargar los archivos.</p></header><section><h3 class="h3" id="css_estructura">Estructura de carpetas en css</h3><ul><li><strong>sass</strong><ul><li>tools<ul><li><strong>mixins</strong></li><li><strong>functions</strong></li><li><strong>animate</strong></li><li>_tools.animate.scss</li><li>_tools.functions.scss</li><li>_tools.helpers.scss</li><li>_tools.mediatool.scss</li><li>_tools.mixins.scss</li></ul></li><li>base<ul><li>base.normalize.scss</li><li>base.scss</li></ul></li><li>layout</li><li>components</li><li>_style-var.scss</li><li>style.scss</li></ul></li></ul><dl><dt>_style-var.scss</dt><dd>Hoja específica para declarar las variables.</dd><dt>tools</dt><dd>Dentro de la carpeta tools encontramos tres carpetas:<ul><li>mixins<ul><li>Cada mixin tiene su propio archivo. Los colocamos dentro de la carpeta mixin y los importamos en caso de necesitarlos en el archivo <strong>_tools.mixins.scs</strong></li></ul></li><li>functions<ul><li>Es el mismo caso que los mixins. Las funciones estan separadas por archivos y las importamos desde el 'partial' <strong>_tools.functions.scss</strong></li></ul></li><li>animate<ul><li>Animate es un ejemplo de donde ubicar una libreria de terceros. Esta libreria contiene mixins con diferentes animaciones en css. Cada animación tiene su carpeta y un archivo <strong>_tools.animate.scss </strong>donde hacemos la carga de aquellas animaciones necesarias para nuestro proyecto</li></ul></li></ul></dd></dl><p>En el interior de la carpeta tools. Junto a las carpetas mencionadas estan los archivos:</p><dl><dt>_tools.animate.scss</dt><dd>Archivo donde importamos las animaciones que utilizemos</dd><dt>_tools.functions.scss</dt><dd>Archivo donde importamos las funciones necesarias</dd><dt>_tools.helpers.scss</dt><dd>Archivo que contien placeholders comunes que podemos usar en múltiples proyectos</dd><dt>_tools.mediatool.scss</dt><dd>Archivo para desarrollo que asigna un background diferente para cada media query.</dd><dt>_tools.mixins.scss</dt><dd>Archivo donde importamos los mixins necesarios</dd></dl><dl><dt>Base</dt><dd>En la carpeta Base encontramos dos archivos:<ul><li><strong>_base.normalitze.scss :</strong> Archivo para unificar la visualización inicial de los navegadores.</li><li><strong>_base.scss :</strong> En él escribimos los estilos css de los elementos html. Sin selectores de clase ni Id.</li></ul></dd><dt>Layout</dt><dd>En layout escribimos únicamente la estructura general de la web. Si tiene uno o dos sidebars, el footer .... Volvemos a usar unicamente selectores de clase.</dd><dt>Components</dt><dd>Components es el apartado donde trabajaremos la mayoria del tiempo. En él van los estilos específicos de cada elemento. Un slider, un menu, un artículo... Si creamos un slider o un menú, les asignamos siempre archivos independientes para facilitar la reutilización y la localización.</dd></dl><p>Dentro de cada carpeta podemos colocar tantos archivos scss como sean necesarios. La nomenclatura de esos archivos debe empezar siempre con el prefijo de su carpeta. Es decir, dentro de components encontrariamos <strong>component.buttons.scss</strong> o dentro de layout <strong>layout.home.scss</strong> .</p><p>De este modo resulta más rápido localizar de donde procede cada selector.</p></section><section><h3 class="h3" id="css_syntaxy">Sintaxy y Formato</h3><p>Stylelint se encarga de revisar el código css y su formato. En mi caso utilizo un plugin de <a href="https://packagecontrol.io/packages/SublimeLinter-contrib-stylint">sublime text</a> para detectar los errores al momento. Si no queremos utilizar el linter en gulp basta con poner el valor (false) en la variable lintcss (config.js). Otro de los plugins interesantes es <a href="https://github.com/victorporof/Sublime-HTMLPrettify">html css js Prettify</a>. Se ocupa de formatear nuestro código. En su opciones de configuración podemos asignar los valores a seguir en multiples lenguajes. Como guía orientativa dejo unas cuantas opciones.</p><ul><li>Identación de 4 espacios.</li><li>Cada selector y cada declaración tiene su propia línea.</li><li>Entre el selector y la llave de apertura poner un espacio.</li><li>Entre la propiedad y el valor un espacio despues de ":".</li><li>Las llaves de cierre tiene su propia línea.</li><li>Cada regla css tiene un linea en blanco de separación.</li><li>Siempre que se pueda, evitar el uso del selector de ID y selectores muy específicos como el adyacente.</li><li>Dentro de lo posible no escribir líneas con más de 80 caracters. Para facilitar esto sublime (view/ruler/80) nos muestra una línea con esa longitud. No lo utilizo de manera estricta pero si aproximada. De este modo facilitamos la lectura sin realizar scroll horizontal.</li></ul><pre>
+<code class="language-css">
+/*Regla css completa*/
+.hola { /*selector*/
+    position: absolute; /*propiedad/valor*/
+    padding-bottom: 10px; /*propiedad + valor = declaración*/
+} /*llave de cierre*/
+</code>
+    </pre><pre>
+<code class="language-css">
+/* MAL */
+.selector{ /*Falta un espacio blanco entre selector y llave*/
+position: relative; /*La declaración no tiene 4 espacios de identación*/
+} /*Falta línea en blanco entre reglas*/
+.selectordos {
+position:relative; /*Falta espacio en blanco entre propiedad y valor*/
+}
+
+selectortres{ position:relative; /*La declaración y el selector no tienen su propia línea*/
+display: block; background-color: green; /*La declaración no tiene su propia línea*/
+}
+
+.selectoruno, .selectordos, .selectortres { /*Cada selector no tiene su propia línea*/
+    color: red;
+} 
+</code>
+    </pre><pre>
+<code class="language-css">
+/* Bien */
+.selector { /*Espacio blanco entre selector y llave*/
+    position: relative; /*La declaración tiene 4 espacios de identación*/
+} /*La llave de cierre tiene su propia línea*/
+/*Línea en blanco de separación entre reglas*/
+.selector-dos {
+    position: relative; /*Espacio entre propiedad y valor*/
+} /*LLave de cierre en su propia línea*/
+
+selector-tres { 
+    position: relative; /*La declaración tiene su propia línea*/
+}
+
+.selector-uno, 
+.selector-dos, 
+.selector-tres { /*Cada selector tiene su propia línea*/
+    color: red;
+}  
+</code>     
+    </pre><section><h3 class="h3" id="css_nomenclatura">Nomenclatura</h3><p>La idea es seguir la nomenclatura <a href="http://getbem.com/">Bem</a>. Pero no es una regla. Usarla cuando sea de utilidad.</p><pre>
+<code class="language-css">
+.nav,
+.nav-menu,
+.nav-general {
+   /*Selectores que representan un bloque*/
+}
+
+.nav__item,
+.nav-menu__item,
+.nav-general__item {
+    /*Selectores que representan elementos descendientes de bloques*/
+}
+
+.nav__item--active,
+.nav-menu--open,
+.nav-menu__item--open{
+    /*Selectores que representan una alteración del estado inicial 
+    de un bloque o de un elemento*/
+}
+</code>
+    </pre><p>Si quiero asignar un nombre compuesto a un selector utilizo el separador "-".</p></section><section><h3 class="h3" id="css_comentarios">Comentarios en el código</h3><p>Para facilitar la tarea de los comentarios utilizo un plugin de sublime <a href="https://packagecontrol.io/packages/Comment-Snippets">Comment-Snippets</a>. También está disponible para Atom.</p><pre>
+<code class="language-css">
+/*==================================================
+=            Cabezera de los documentos            =
+==================================================*/
+
+/*----------
+Subsección de cada documento
+----------*/
+
+/* Comentario como pequeña observación de una línea de código */             
+</code>
+      </pre></section><section><h3 class="h3" id="css_preprocesadores">Preprocesadores</h3><p>En caso de trabajar con preprocesadores ya sea sass, less o culaquier otro:</p><ul><li>No superar tres niveles de identación.</li><li>Las variables globales siempre en _style-var.scss.</li><li>Utilizar nomenclatura descriptiva de la variable y no usar palabras propias de css o html.</li><li>Los include siempre la ultima o la primera declaración de la regla. De este modo resaltan entre las propiedades.</li></ul><pre>
+<code class="language-css">
+/*Ejemplo de errores*/
+.menu {
+    display: block;
+    @include border-radius(20px); /*Mal*/
+    margin: 10%;
+
+    .menu__item {
+        margin-left: 5%;
+
+        .menu__item__span {
+            color: $margin; /*Conduce a error. No usar palabras propias
+             de css*/
+
+            .menu__item__link { /*Exceso de anidación*/
+                color: $pepito; /*Pepito no tiene ninguna relacion con 
+                el color*/
+            }
+        }
+    }
+}
+    
+</code>       
+    </pre><pre>
+<code class="language-css">
+/*Buen uso*/
+.menu {
+    margin: 2em;
+    @include border-radius(20px); /*include al final*/
+
+    .menu__item {
+        margin-left: 2em;
+
+        .menu__item__span {
+            color: $color_secundario; /*/                  
+        }
+
+    }
+
+}
+/*Lo sacamos de la anidación (máximo 3) para hacer más legible el código*/
+.menu__item__link { 
+    color: $color-link; /*la variable ya tiene un nombre que representa
+     su función*/
+}          
+</code>        
+    </pre></section></section></article><article class="article article--html" id="html"><header><h2 class="h2">HTML</h2><p>Guía de estilos para html.</p></header><section><h3 class="h3">Sintaxy</h3><p>No son normas inamovibles, son una referencia para unificar criterios entre todos aquellos que trabajen en el mismo proyecto.</p><p>Cada etiqueta que representa un bloque tiene su propio línea. De esta manera se facilita la lectura y la visibilidad de las etiquetas. Del mismo modo, cualquier etiqueta que contenga más de 80 caracteres en su interior le asignamos una línea propia. La idea es hacer más legible el contenido y ver fácilmente donde están las etiquetas de apertura y cierre.</p><pre>
+<code class="language-html">
+&lt;p&gt;
+El párrafo tiene las "p" con líneas independientes.
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Los elementos de la lista en la misma línea&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;!-- La"ul" que representa el bloque tiene su propia línea --&gt;
+</code>
+    </pre><p>Hacer uso de los espacios para diferenciar entre contenido.</p><pre>
+<code class="language-html">
+&lt;article&gt;
+ &lt;p&gt;Contenido de un artículo&lt;/p&gt;
+&lt;/article&gt;
+    &lt;!-- Separación para recalcar cambio de tema --&gt;
+&lt;article&gt;
+ &lt;p&gt;Contenido de otro artículo&lt;/p&gt;
+&lt;/article&gt;
+</code>
+    </pre><p>En <a href="http://w3c.github.io/html/syntax.html#optional-start-and-end-tags">html5</a> no es obligatorio el cierre de algunas etiquetas y no esta permitido en otras. Ninguno de los void elements (elementos vacíos) puede llevar etiqueta de cierre.</p><pre>
+<code class="language-html">
+&lt;img src="bla bla" alt=""/&gt; &lt;!--No es válido--&gt;
+&lt;img src="bla bla" alt=""&gt; &lt;!--Correcto--&gt;        
+</code>
+    </pre><p>Todas las etiquetas con cierre opcional se cierran.</p><pre>
+<code class="language-html">     
+&lt;p&gt;se cierra&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;se cierra&lt;/li&gt;  
+&lt;/ul&gt;
+</code>
+    </pre><p>Del mismo modo, html5 también permite <a href="http://w3c.github.io/html/syntax.html#optional-start-and-end-tags">omitir</a> las etiquetas html, head y body bajo ciertas condiciones. Mientras sea opcional, las escribiremos siempre.</p><pre> 
+<code class="language-html">  
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;title&gt; &lt;/title&gt;
+    &lt;/head&gt;
+  &lt;body&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;
+<!--Estructura mínima de cualquier documento html-->
+</code>
+    </pre><p>Usar comillas dobles para los atributos html.</p><p>Todas las imágenes deben llevar el atributo alt.</p><p>Todos los tags y sus atributos se escriben con minúsculas.</p><pre>
+<code class="language-html">
+&lt;img src="image/foto.png" alt="foto autor"&gt;
+&lt;img src='image/foto.png' alt="foto autor"&gt; &lt;!--Mal comillas simples--&gt;
+&lt;img src="image/foto.png"&gt; &lt;!--Mal falta alt--&gt;
+&lt;img SRC="image/foto.png"&gt; &lt;!--Mal atributo en mayúsculas--&gt;
+</code>
+    </pre><p>Las etiquetas <code class="language-html">&lt;hr&gt;</code> y <code class="language-html">&lt;br&gt;</code> se evitan siempre que sea posible.</p><p>Usar las mínimas etiquetas posibles en cada momento. A menos etiquetas menos trabajo tiene el navegador para renderizar.</p><p>Dentro de lo posible no superar los 80 caracteres por línea.</p><p>Siempre buscar la etiqueta con más significado semántico. Evitar la "divitis".</p><pre>
+<code class="language-html">
+&lt;figure&gt;
+  &lt;img src="image/foto.jpg" alt="Montañas nevadas en la sierra"&gt;
+  &lt;figcaption&gt;Paisaje de la sierra&lt;/figcaption&gt;
+&lt;/figure&gt;     
+</code>
+    </pre><p>La identación en html es de 2 espacios. Utilizo menos identación que en css ya que suelo anidar más.</p><p>El atributo style en las etiquetas html no esta permitido.</p><p>La etiqueta input siempre debe llevar el atributo for y su label asociado. Recordar que la asociación se establece escribiendo el mismo valor en el for del label que el id del input.</p><pre>
+<code class="language-html"> 
+&lt;label for="name"&gt;Nombre&lt;/label&gt; 
+&lt;input type="text" id="name"&gt;  
+</code>
+    </pre></section><section><h3 class="h3">Comentarios</h3><p>Mientras trabajemos con gulp y el módulo processhtml utilizamos el sistema de comentarios del propio módulo. De este modo podemos comentar con exactitud en desarrollo y los eliminamos en producción.</p><section><h4 class="h4">Comentarios con processhmtl</h4><p><a href="https://www.npmjs.com/package/gulp-processhtml" target="_blank">Processhtml</a> es un módulo para gulp con el que, entre otras cosas, realizar includes sin necesidad de plantillas.</p><pre class="language-markup">
+<code class="language-markup">
+&lt;!-- build:css style.min.css --&gt;
+&lt;link rel="stylesheet" href="css/style.css"&gt;
+Sustituye el nombre de la hoja de estilos
+&lt;!-- /build --&gt;
+
+&lt;!-- build:remove --&gt;
+Elimina cualquier contenido dentro del comentario.
+&lt;!-- /build --&gt;
+
+&lt;!-- build:js:dist js/scripts.min.js --&gt;
+Solo en modo producción sustituye el src del script
+&lt;!-- /build --&gt;
+
+&lt;!-- build:include include/footer.html --&gt;
+Inserta el archivo footer.html
+&lt;!-- /build --&gt;
+
+&lt;!-- build:include:dist include/footer-dist.html --&gt;
+Solo en modo producción incluye el footer-dist.html
+&lt;!-- /build --&gt;
+</code>
+      </pre></section><section><h4 class="h4">Comentarios básicos en html</h4><p>Usemos o no el módulo los comentarios en el html siempre son necesarios. Pero sin olvidar que aparecen en el código final sino los procesamos.</p><pre class="language-markup">
+<code class="language-markup">
+&lt;!-- Comentario simple como anotación --&gt;
+
+&lt;!-- 
+Comentario multilínea para una explicación mas extensa
+en el documento html    
+--&gt;     
+</code>
+      </pre></section></section></article></main><footer class="footer"><div class="button-up"><a href="#body" class="button-up__link" data-scroll>^</a></div><p>Ivan Martil</p><div><a href="http://www.findelinea.es" target="_blank">www.findelinea.es</a> - <a href="https://twitter.com/imm_es" target="_blank">Twitter</a></div><!-- <a href="https://cssguidelin.es/">cssguidelin.es</a>
+    <a href="https://github.com/airbnb/javascript">airbnb</a>
+    <a href="https://google.github.io/styleguide/">google styleguide</a> --></footer><script src="js/vendor/prism.js"></script><script src="js/vendor/zenscroll-min.js"></script><script src="js/script.min.js"></script></body></html>

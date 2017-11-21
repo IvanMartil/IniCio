@@ -1,0 +1,36 @@
+/*=========================================================
+=            Archivo donde cargar los partials            =
+=========================================================*/
+
+@charset "UTF-8";
+
+/*----------
+Variables
+----------*/
+@import '_style-var';
+
+/*----------
+Tools
+----------*/
+@import 'tools/_tools.functions';
+@import 'tools/_tools.mixins';
+@import 'tools/_tools.helpers';
+// @import 'tools/_mediatool.scss';
+
+/*----------
+Base
+----------*/
+@import 'base/_base.normalize';
+@import 'base/_base.scss';
+
+/*----------
+Layout
+----------*/
+@import 'layout/_layout';
+
+
+/*----------
+Components
+----------*/
+@import 'components/_component.elements.scss'
+// @import 'components/_component.menu.scss';

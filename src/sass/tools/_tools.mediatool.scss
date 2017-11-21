@@ -1,0 +1,58 @@
+/*=========================================
+=            Test mediaqueries            =
+=========================================*/
+/*----------
+Cada mediaqueri asigna un color de fondo diferente. De este modo podemos 
+saber rápidamente donde estamos.
+----------*/
+
+body,
+header,
+main{
+	background:black!important;
+	@include MQ(XS) {
+		background:green!important;
+	}
+	@include MQ(Splus) {
+		background:red!important;
+	}
+	@include MQ(Mplus) {
+		background:orange!important;
+	}
+	@include MQ(Lplus) {
+		background:yellow!important;
+	}
+	@include MQ(XLplus) {
+		background:purple!important;
+	}
+	@include MQ(XXLplus) {
+		background:grey!important;
+	}
+	@include MQ(XXXLplus) {
+		background:pink!important;
+	}
+}
+
+
+
+  
+  
+  
+    
+       
+       
+       
+      
+      
+      
+      
+   
+   
+   
+
+
+
+
+
+
+

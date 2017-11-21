@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Placeholders
+   ========================================================================== */
+
+/*----------
+Ocultar
+----------*/
+%hidden {
+	display: none;
+	visibility: hidden;
+}
+
+/*----------
+Clearfix
+----------*/
+%clearfix {
+	&::after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+}
+
+/*----------
+Centrar
+----------*/
+%centrar {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/*----------
+Eliminar los estilos predeterminados de input
+----------*/
+%input--reset {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+

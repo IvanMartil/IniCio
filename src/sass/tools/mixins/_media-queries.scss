@@ -1,0 +1,131 @@
+
+/* ==========================================================================
+   Media Query mixin
+   ========================================================================== */
+   /**
+    * 1- ver variables-globales.scss
+    * 2-Cada variable responde a un breakpoint. Si hacemos include de S su ambito es desde los 30 em hasta los 43 em. 
+    *    Si queremos ampliar el ambito con Splus le quitamos el limite.los splus,mplus,lplus... equivalen a min-width(desde la variable hasta el más alla).
+    *    con sneg, mneg,lneg... el breakpoint equivale a max-width (hasta la variable).
+    *    Para hacer saltos entre variables definimos en el mixin se stoL, de mtoxl de este modo nos saltamos
+    *    el breakpoint que haga falta
+    */ 
+  
+@mixin MQ($canvas) {
+    @if $canvas == XS {
+        @media only screen and (min-width: $XS) and (max-width: $S - 0.01) {
+        	@content;
+        }
+    }
+    @else if $canvas == S {
+        @media only screen and (min-width: $S) and (max-width: $M - 0.01) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == M {
+        @media only screen and (min-width: $M) and (max-width: $L - 0.01) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == L {
+        @media only screen and (min-width: $L) and (max-width: $XL - 0.01) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == XL {
+        @media only screen and (min-width: $XL) and (max-width: $XXL - 0.01) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == XXL {
+        @media only screen and (min-width: $XXL) and (max-width: $XXL - 0.01) { @content; }
+    }
+    @else if $canvas == XSplus {
+        @media only screen and (min-width: $XS) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == Splus {
+        @media only screen and (min-width: $S) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == Mplus {
+        @media only screen and (min-width: $M) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == Lplus {
+        @media only screen and (min-width: $L) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == XLplus {
+        @media only screen and (min-width: $XL) { 
+        	@content; 
+        }
+    }
+
+    @else if $canvas == XXLplus {
+        @media only screen and (min-width: $XXL) { 
+        	@content; 
+        }
+    }
+
+    @else if $canvas == XXXLplus {
+        @media only screen and (min-width: $XXXL) { 
+        	@content; 
+        }
+    }
+
+    @else if $canvas == XSneg {
+        @media only screen and (max-width: $XS) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == Sneg {
+        @media only screen and (max-width: $S) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == Mneg {
+        @media only screen and (max-width: $M) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == Lneg {
+        @media only screen and (max-width: $L) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == XLneg {
+        @media only screen and (max-width: $XL) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == XXLneg {
+        @media only screen and (max-width: $XXL) { 
+        	@content; 
+        }
+    }
+     @else if $canvas == StoM {
+        @media only screen and (min-width: $S) and (max-width: $M - 1) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == StoL {
+        @media only screen and (min-width: $S) and (max-width: $L - 1) { 
+        	@content; 
+        }
+    }
+    @else if $canvas == StoXL {
+        @media only screen and (min-width: $S) and (max-width: $XL - 1) { 
+        	@content; 
+        }
+    }
+     @else if $canvas == MtoXL {
+        @media only screen and (min-width: $M) and (max-width: $XL - 1) { 
+        	@content; 
+        }
+    }
+}
