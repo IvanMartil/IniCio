@@ -1,4 +1,4 @@
-#IniCio con Gulp4
+# IniCio con Gulp4 #
 
 
 > *Plantilla base para trabajar con gulp 4*
@@ -6,14 +6,14 @@
 > En la sección *doc* de la plantilla hay más información sobre su funcionamiento.
 
 
-##Tabla de contenidos
+## Tabla de contenidos ##
 
 - [Instalación](#Instalación)
-- [Usando gulp](#Usando Gulp)
-- [Comandos npm](#Comandos npm)
+- [Usando gulp](#Usando)
+- [Comandos npm](#Comandos)
 - [Estructura](#Estructura)
 
-##Instalación
+## Instalación ##
 El primer paso es instalar [Nodejs](https://nodejs.org/es/) y desinstalar cualquier versión previa de gulp tanto a nivel local como
 
  global. La plantilla funciona con la versión 4 de gulp.
@@ -58,7 +58,7 @@ Con gulp4 funcionando ya podemos trabajar con la plantilla.
 
 
 
-##Usando Gulp
+## Usando Gulp ##
 
 Dentro de la carpeta _gulp_ tenemos las tareas y el archivo de configuración.
 
@@ -150,7 +150,7 @@ Ejecuta la tarea *work* para observar si tenemos cambios en el código.
 
 
 
-####Comandos npm
+## Comandos npm ##
 
 Algunos comandos útiles para trabajar con la plantilla.
 
@@ -189,7 +189,7 @@ npm uninstall nombre_modulo
 
 
 
-##Estructura
+## Estructura ##
 
 La Estructura de carpetas:
 
