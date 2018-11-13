@@ -42,7 +42,7 @@ const lintcss = false;
 url del servidor local  
 ----------*/
 const server = {
-    urlProject: 'http://localhost/IniCio/dist'
+    urlProject: 'http://localhost/github//IniCio/dist'
 };
 
 /*----------  
