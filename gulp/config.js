@@ -51,7 +51,7 @@ variables para processhtml(includes html)
 const targets = {
     dist: {
         environment: 'dist',
-        /* en data puedo pasar todas las variables que quiera disponibles en html */       
+        /* en data puedo pasar todas las variables que quiera disponibles en html */
         data: {
             assets: 'dist'
         }
@@ -68,22 +68,13 @@ const targets = {
 Opciones de configuración de los plugins  
 ----------*/
 const options = {
-    autoprefixer: {
-        browsers: [
-            "last 2 version",
-            "safari 5",
-            "ie 9",
-            "opera 12.1",
-            "ios 6",
-            "android 4"
-        ]
-
-    },
     imagemin: {
         interlaced: true,
         progressive: true,
         optimizationLevel: 5,
-        svgoPlugins: [{ removeViewBox: true }]
+        svgoPlugins: [{
+            removeViewBox: true
+        }]
     },
     cssnano: {
         discardComments: true,
@@ -107,10 +98,10 @@ const options = {
 
     },
     stylelint: {
-    	reporters: [{
-    		formatter: 'string', 
-    		console: true
-    	}]
+        reporters: [{
+            formatter: 'string',
+            console: true
+        }]
     }
 
 

@@ -32,18 +32,20 @@ function css() {
     return gulp
         .src(config.paths.css.src)
         .pipe(
-        	config.lintcss === true ?
-        	stylelint(config.options.stylelint) : util.noop()
-		)
+            config.lintcss === true ?
+            stylelint(config.options.stylelint) : util.noop()
+        )
         .pipe(
             config.environment === 'development' ?
             sourcemaps.init() : util.noop()
         )
-        .pipe(sass({ outputStyle: 'expanded' }).on('error', notify.onError({
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }).on('error', notify.onError({
             message: 'Error: <%= error.message %>',
             title: 'Fallo en css'
-        })))    
-        .pipe(postcss([autoprefixer({ browsers: config.options.autoprefixer.browsers })]))
+        })))
+        .pipe(postcss([autoprefixer()]))
         .pipe(
             config.environment === 'development' ?
             sourcemaps.write('./maps') : util.noop()
@@ -54,7 +56,9 @@ function css() {
         )
         .pipe(
             config.environment === 'production' ?
-            rename({ suffix: '.min' }) : util.noop()
+            rename({
+                suffix: '.min'
+            }) : util.noop()
         )
         .pipe(gulp.dest(config.paths.css.dest))
         .pipe(browserSync.stream())
